@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Navbar */
+
+.navbar {
+    position: fixed;
+    height: 100%;
+    background-color: #f44336;
+    color: #fff;
+    width: 300px;
+    font-weight: bold;
+    font-size: 20px;
+    overflow: auto;
+    z-index: 3;
+}
+
+.close-navbar {
+    visibility: hidden;
+    text-align: center;
+    padding: 10px;
+    transition: background-color .3s, color .3s;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.close-navbar:hover {
+    background-color: rgb(173, 170, 170);
+    color: black;
+}
+
+.nav-info {
+    margin: 50px 10px 30px;
+}
+
+.name-company {
+    font-size: 26px;
+    padding: 10px;
+}
+
+.navigator {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.navigator-item {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    transition: .3s;
+}
+
+.navigator-item:hover {
+    background-color: white;
+    color: black;
+}
+
+.navbar.open-close-nav {
+    display: block;
+}
+
+/* Black out */
+
+.black-out {
+    background-color: black;
+    opacity: 0.5;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 300px;
+    z-index: 2;
+}
+
+/* Header */
+
+.header {
+    display: none;
+    flex-direction: row;
+    gap: 10px;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    padding-left: 50px;
+    align-items: center;
+    background-color: #f44336;
+    color: #fff;
+    font-size: 20px;
+    z-index: 1;
+}
+
+.btn-open-nav {
+    font-size: 35px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-open-nav:hover {
+    color: black;
+    background-color: #fff;
+}  
+
+/* Main content */
+
+.content {
+    position: absolute;
+    top: 30px;
+    left: 350px;    
+    /* padding: 15px; */
+    width: 70vw;
+    /* background-color: #ecdfdf; */
+    margin-inline: 20px;
+}
+
+.title {
+    font-size: 58px;
+    font-weight: bold;
+}
+
+.subtitle {
+    color: #f44336;
+    font-size: 38px;
+    margin-block: 20px;
+}
+
+.line {
+    border: 1px solid #f44336;
+    border-radius: 30px;
+    background-color: #f44336;
+    width: 70px;
+    height: 10px;
+    margin-bottom: 20px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto   ;
+    gap: 10px;
+}
+
+.card-item img {
+    max-width: 100%;
+    height: auto;
+    opacity: 1;
+    cursor: pointer;
+    /* object-fit: cover; */
+    /* width: 300px; */
+}
+.card-item img:hover {
+    opacity: 1;
+}
+
+.unit {
+    margin-block: 40px;
+}
+
+.text {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+/* Designers cards */
+
+.designer-cards {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.des-card {
+    background-color: lightgray;
+}
+
+.des-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.des-name {
+    padding: 5px;
+}
+
+.job-title {
+    color: gray;
+    padding: 5px;
+}
+
+.des-card .text {
+    padding: 5px;
+    margin: 0px;
+}
+
+/* Full image */
+
+.image-window {
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    gap: 3px;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    z-index: 5;
+    overflow: auto;
+    /* opacity: 0.98; */
+}
+
+.image-window.none {
+    display: flex;
+}
+
+.x {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.image-window img {
+    max-width: 0%;
+    height: auto;
+    transition: .7s;
+}
+
+/* Media */
+
+@media (max-width: 992px) {
+    .header {
+        display: flex;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .close-navbar {
+        visibility: visible;
+    }
+
+    .content {
+        top: 90px;
+        left: 0px;
+        width: 90vw;
+    }
+}
+
+@media (min-width: 993px) {
+    .black-out {
+        display: none;
+    }
+}
+
+@media (max-width: 425px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .designer-cards {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+
+}
